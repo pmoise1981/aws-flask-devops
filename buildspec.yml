@@ -10,18 +10,18 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin4936-0884-2247.dkr.ecr.us-east-1.amazonaws.com
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin 493608842247.dkr.ecr.us-east-1.amazonaws.com
   build:
     commands:
       - echo Running unit tests...
       - pytest tests || exit 1
       - echo Building the Docker image...
       - docker build -t flask-devops-app .
-      - docker tag flask-devops-app:latest 4936-0884-2247.dkr.ecr.us-east-1.amazonaws.com/flask-devops-app:latest
+      - docker tag flask-devops-app:latest 493608842247.dkr.ecr.us-east-1.amazonaws.com/flask-devops-app:latest
   post_build:
     commands:
       - echo Pushing Docker image to ECR...
-      - docker push 4936-0884-2247.dkr.ecr.us-east-1.amazonaws.com/flask-devops-app:latest
+      - docker push 493608842247.dkr.ecr.us-east-1.amazonaws.com/flask-devops-app:latest
 
 artifacts:
   files: []
