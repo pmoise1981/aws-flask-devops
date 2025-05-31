@@ -1,0 +1,7 @@
+version: '3'
+services:
+  web:
+    image: 493608842247.dkr.ecr.us-east-1.amazonaws.com/flask-devops-app:latest
+    ports:
+      - "80:80"
+
